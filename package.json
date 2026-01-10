@@ -1,0 +1,37 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "infisical run --env=dev -- next dev --turbopack",
+    "build": "infisical run --env=production -- bun run build",
+    "start": "infisical run --env=production -- bun run start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@emailjs/nodejs": "^5.0.2",
+    "@hookform/resolvers": "^5.2.2",
+    "@tailwindcss/postcss": "^4.1.6",
+    "@tailwindcss/upgrade": "^4.1.6",
+    "next": "^16.1.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-hook-form": "^7.69.0",
+    "react-hot-toast": "^2.6.0",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.1.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.6",
+    "typescript": "^5"
+  }
+}
