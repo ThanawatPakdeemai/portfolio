@@ -25,47 +25,47 @@ const ContactDetail = () => {
     resolver: zodResolver(FORM_SCHEMA_CONTACT),
   });
 
-  const sendEmail = () => {
-    const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY as string;
-    const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
-    const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
-    setLoading(true);
-    if (form.current) {
-      emailjs
-        .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
-          publicKey: PUBLIC_KEY,
-        })
-        .then(
-          () => {
-            toast.success("Send Email Successfully ", {
-              style: {
-                background: "#313131",
-                color: "#fff",
-              },
-            });
-            reset();
-          },
-          () => {
-            toast.error("Send Email Unsuccessfully ", {
-              style: {
-                background: "#313131",
-                color: "#fff",
-              },
-            });
-          },
-        )
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
-      toast.error("Send Email Unsuccessfully ", {
-        style: {
-          background: "#313131",
-          color: "#fff",
-        },
-      });
-    }
-  };
+  // const sendEmail = () => {
+  //   const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY as string;
+  //   const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID as string;
+  //   const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string;
+  //   setLoading(true);
+  //   if (form.current) {
+  //     emailjs
+  //       .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+  //         publicKey: PUBLIC_KEY,
+  //       })
+  //       .then(
+  //         () => {
+  //           toast.success("Send Email Successfully ", {
+  //             style: {
+  //               background: "#313131",
+  //               color: "#fff",
+  //             },
+  //           });
+  //           reset();
+  //         },
+  //         () => {
+  //           toast.error("Send Email Unsuccessfully ", {
+  //             style: {
+  //               background: "#313131",
+  //               color: "#fff",
+  //             },
+  //           });
+  //         },
+  //       )
+  //       .finally(() => {
+  //         setLoading(false);
+  //       });
+  //   } else {
+  //     toast.error("Send Email Unsuccessfully ", {
+  //       style: {
+  //         background: "#313131",
+  //         color: "#fff",
+  //       },
+  //     });
+  //   }
+  // };
 
   const onSubmit = async (data: TFormValues) => {
     setLoading(true);

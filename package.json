@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "infisical run --env=dev -- next dev --turbopack",
-    "build": "infisical run --env=prod -- next build",
-    "start": "infisical run --env=prod -- next start",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
