@@ -11,29 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      # 1️⃣ Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3️⃣ Install Infisical + Vercel CLI
       - name: Install CLIs
         run: |
-          npm install -g @infisical/cli vercel
+          npm install -g @infisical/cli@0.33.0 vercel
 
-      - name: Pull env from Infisical
+      # 4️⃣ Export env from Infisical → .env
+      - name: Export env from Infisical
         run: |
           infisical export \
-            --projectId $INFISICAL_PROJECT_ID \
-            --env $INFISICAL_ENV \
+            --projectId "$INFISICAL_PROJECT_ID" \
+            --env "$INFISICAL_ENV" \
             --format dotenv \
-            --output .env
+            --output-file .env
         env:
           INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
 
-      - name: Sync EmailJS envs to Vercel (Production)
+      # 5️⃣ Sync EmailJS envs to Vercel (Production only)
+      - name: Sync EmailJS envs to Vercel
         run: |
           for key in \
             EMAILJS_PRIVATEKEY \
@@ -48,12 +53,12 @@ jobs:
               continue
             fi
 
-            echo "🚀 Syncing $key"
+            echo "🚀 Syncing $key to Vercel (production)"
             echo "$value" | vercel env add "$key" production \
               --yes \
-              --token=$VERCEL_TOKEN \
-              --scope=$VERCEL_ORG_ID \
-              --project=$VERCEL_PROJECT_ID
+              --token="$VERCEL_TOKEN" \
+              --scope="$VERCEL_ORG_ID" \
+              --project="$VERCEL_PROJECT_ID"
           done
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
