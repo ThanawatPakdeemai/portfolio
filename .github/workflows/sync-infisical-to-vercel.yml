@@ -1,0 +1,61 @@
+name: Sync EmailJS Env (Infisical → Vercel)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install CLIs
+        run: |
+          npm install -g @infisical/cli vercel
+
+      - name: Pull env from Infisical
+        run: |
+          infisical export \
+            --projectId $INFISICAL_PROJECT_ID \
+            --env $INFISICAL_ENV \
+            --format dotenv \
+            --output .env
+        env:
+          INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
+
+      - name: Sync EmailJS envs to Vercel (Production)
+        run: |
+          for key in \
+            EMAILJS_PRIVATEKEY \
+            EMAILJS_PUBLIC_KEY \
+            EMAILJS_SERVICE_ID \
+            EMAILJS_TEMPLATE_ID
+          do
+            value=$(grep "^$key=" .env | cut -d '=' -f 2-)
+
+            if [ -z "$value" ]; then
+              echo "⚠️ $key not found in Infisical"
+              continue
+            fi
+
+            echo "🚀 Syncing $key"
+            echo "$value" | vercel env add "$key" production \
+              --yes \
+              --token=$VERCEL_TOKEN \
+              --scope=$VERCEL_ORG_ID \
+              --project=$VERCEL_PROJECT_ID
+          done
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
