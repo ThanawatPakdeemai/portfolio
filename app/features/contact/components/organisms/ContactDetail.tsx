@@ -94,6 +94,12 @@ const ContactDetail = () => {
 
   return (
     <div className="h-full p-6">
+      <p style={{ color: "red" }}>
+        {process.env.NEXT_PUBLIC_EMAILJS_PRIVATEKEY as string}
+      </p>
+      <p style={{ color: "yellow" }}>
+        {process.env.EMAILJS_PRIVATEKEY as string}
+      </p>
       <form ref={form} onSubmit={handleSubmit(onSubmit)}>
         <h2 className="font-Roboto_Slab text-3xl text-white">Contact</h2>
         <span className="bg-yellow-primary my-4 inline-block h-1.5 w-[85px] rounded-xs"></span>
