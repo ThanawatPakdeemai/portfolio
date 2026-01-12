@@ -32,8 +32,7 @@ jobs:
           infisical export \
             --projectId "$INFISICAL_PROJECT_ID" \
             --env "$INFISICAL_ENV" \
-            --format dotenv \
-            --output-file .env
+            --format dotenv > .env
         env:
           INFISICAL_TOKEN: ${{ secrets.INFISICAL_TOKEN }}
 
