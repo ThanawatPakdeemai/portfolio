@@ -31,7 +31,7 @@ export const SOCIAL_DATA: ISocial[] = [
   },
   {
     title: "Github",
-    subTitle: "xxxxx",
+    subTitle: "https://github.com/ThanawatPakdeemai",
     icon: (
       <GitHubIcon
         className="social-icons-rotate absolute h-7 w-7"
@@ -41,7 +41,7 @@ export const SOCIAL_DATA: ISocial[] = [
   },
   {
     title: "Linkedin",
-    subTitle: "xxxxx",
+    subTitle: "https://www.linkedin.com/in/thanawat-pakdeemai/",
     icon: (
       <LinkedinIcon
         className="social-icons-rotate absolute h-5 w-5"

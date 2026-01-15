@@ -3,6 +3,7 @@ import WorkIcon from "@/icons/WorkIcon";
 import {
   IEducation,
   IExperience,
+  ISkills,
 } from "@/features/resume/interfaces/resume.interface";
 
 export const EXPERIENCE_DATA: IExperience = {
@@ -81,4 +82,21 @@ export const EDUCATTION_DATA: IEducation = {
   university: "Prince of Songkla University, Hat Yai",
   duration: "2017 - 2021",
   degree: "Bachelor of Science; Major: Computer Science",
+};
+
+export const SKILLS_DATA: ISkills = {
+  title: "Skills",
+  icon: <EducationIcon width={22} height={22} fill="#efc576" />,
+  data: [
+    "JaveScript/TypeScript",
+    "Next.js",
+    "React",
+    "Next-Auth",
+    "PWA",
+    "Zustand / Redux",
+    "Web3",
+    "AI API Integration",
+    "Tailwind CSS",
+    "Ant Desgin",
+  ],
 };

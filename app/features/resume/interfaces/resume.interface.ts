@@ -23,3 +23,8 @@ export interface IEducation {
   duration: string;
   degree: string;
 }
+export interface ISkills {
+  title: string;
+  icon: ReactElement;
+  data: Array<string>;
+}

@@ -29,7 +29,7 @@ const ResumeDetail = () => {
       <div className="flex items-center justify-between">
         <h2 className="font-Roboto_Slab text-3xl text-white">Resume</h2>
         <a
-          href={"/document/Resume-Thanawat_Pakdeemai.pdf"}
+          href={"/document/Resume-ThanawatPakdeemai.pdf"}
           target="_blank"
           // download="random_file.pdf"
           rel="noopener noreferrer"

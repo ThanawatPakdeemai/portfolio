@@ -1,8 +1,8 @@
 import {
   EDUCATTION_DATA,
   EXPERIENCE_DATA,
+  SKILLS_DATA,
 } from "@/features/resume/constants/resume";
-import React from "react";
 
 const Timeline = () => {
   return (
@@ -38,13 +38,31 @@ const Timeline = () => {
         </div>
         <span className="icon-line" />
         <li className="dot">
-          <div className="company oxygen-regular">{EDUCATTION_DATA.title}</div>
+          <div className="company oxygen-regular">
+            {EDUCATTION_DATA.university}
+          </div>
           <div className="time">{EDUCATTION_DATA.duration}</div>
           <ul className="sub-detail">
-            <li>{EDUCATTION_DATA.university}</li>
+            <li>{EDUCATTION_DATA.degree}</li>
           </ul>
         </li>
       </ul>
+      {/* <ul className="sessions mt-8">
+        <div className="flex items-center">
+          <div className="icon-group">{SKILLS_DATA.icon}</div>
+          <h2 className="pl-4 text-2xl font-medium text-white">
+            {SKILLS_DATA.title}
+          </h2>
+        </div>
+        <span className="icon-line" />
+        <li className="dot">
+          <ul className="sub-detail grid grid-cols-5">
+            {SKILLS_DATA.data.map((_item, _index) => {
+              return <li key={_index}>{_item}</li>;
+            })}
+          </ul>
+        </li>
+      </ul> */}
     </div>
   );
 };

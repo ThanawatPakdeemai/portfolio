@@ -17,6 +17,7 @@ const ResponsiveIcon = dynamic(() => import("@/icons/ResponsiveIcon"));
 const WebSEOIcon = dynamic(() => import("@/icons/WebSEOIcon"));
 const DesignIcon = dynamic(() => import("@/icons/DesignIcon"));
 const ServerIcon = dynamic(() => import("@/icons/ServerIcon"));
+const AntDesignIcon = dynamic(() => import("@/icons/AntDesignIcon"));
 
 const width = "50px";
 const height = "50px";
@@ -107,5 +108,9 @@ export const SKILLS_DATA: ISKills[] = [
   {
     icon: <EthIcon width={skillIconSize} height={skillIconSize} />,
     name: "Ethereum",
+  },
+  {
+    icon: <AntDesignIcon width={skillIconSize} height={skillIconSize} />,
+    name: "Ant Design",
   },
 ];
