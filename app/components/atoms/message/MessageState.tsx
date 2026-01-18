@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import React from "react";
 
 const WarningIcon = dynamic(() => import("@/icons/WarningIcon"));
 

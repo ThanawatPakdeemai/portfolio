@@ -102,33 +102,19 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.social-icons li {
-  @apply flex items-center;
-  padding: 0.15em;
-  min-width: 275px;
+.social-group {
+  @apply hover:bg-yellow-primary flex items-center gap-6 hover:rounded-md hover:p-0.75;
 }
 
-.social-icons li:hover {
-  @apply bg-yellow-primary rounded-md;
+.social-icons {
+  @apply flex h-11.25 w-11.25 items-center justify-center rounded-lg;
+  background: linear-gradient(315deg, #252525, #323131);
+  transition: all 265ms ease-out;
 }
 
 .social-icons-rotate {
   @apply transition-all group-hover:origin-center group-hover:scale-110;
   @apply group-hover:group-odd:rotate-20 group-hover:group-even:rotate-[-20deg];
-}
-
-.social-icons a {
-  @apply flex items-center justify-center;
-}
-
-.social-icons a:before {
-  @apply block h-11.25 w-11.25 rounded-lg;
-  /* transform: scale(1);
-  -ms-transform: scale(1);
-  -webkit-transform: scale(1); */
-  content: " ";
-  background: linear-gradient(315deg, #252525, #323131);
-  transition: all 265ms ease-out;
 }
 
 .social-title {

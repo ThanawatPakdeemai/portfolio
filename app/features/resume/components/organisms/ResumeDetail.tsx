@@ -4,26 +4,6 @@ const Timeline = dynamic(() => import("@/components/ui/Timeline"));
 const DownloadIcon = dynamic(() => import("@/icons/DownloadIcon"));
 
 const ResumeDetail = () => {
-  // const onButtonClick = () => {
-  //   fetch("/document/").then((response) => {
-  //     response.blob().then((blob) => {
-  //       const fileURL = window.URL.createObjectURL(blob);
-  //       let alink = document.createElement("a");
-  //       alink.href = fileURL;
-  //       alink.download = "SamplePDF.pdf";
-  //       alink.click();
-  //     });
-  //   });
-  // };
-  const onButtonClick = () => {
-    const pdfUrl = "https://file.kiwi/9c1a71df#mLpBz6yXHq004tWTkEOIgQ";
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = "Pakdeemai.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   return (
     <div className="p-6">
       <div className="flex items-center justify-between">

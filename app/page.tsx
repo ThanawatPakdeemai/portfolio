@@ -5,25 +5,45 @@ import { SOCIAL_DATA } from "@/constants/social";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { IHome } from "@/interfaces/home.interface";
+import { useSearchParams } from "next/navigation";
 
 const AboutMeDetail = dynamic(
   () => import("@/features/aboutMe/components/organisms/AboutMeDetail"),
+  { ssr: false },
 );
 const ResumeDetail = dynamic(
   () => import("@/features/resume/components/organisms/ResumeDetail"),
+  { ssr: false },
 );
 const PortfolioDetail = dynamic(
   () => import("@/features/portfolio/components/organisms/PortfolioDetail"),
+  { ssr: false },
 );
 const ContactDetail = dynamic(
   () => import("@/features/contact/components/organisms/ContactDetail"),
+  { ssr: false },
 );
-const MenuMobile = dynamic(() => import("@/components/atoms/MenuMobile"));
-const MenuDesktop = dynamic(() => import("@/components/atoms/MenuDesktop"));
+const MenuMobile = dynamic(
+  () => import("@/app/components/atoms/nav/mobile/MenuMobile"),
+);
+const MenuDesktop = dynamic(
+  () => import("@/app/components/atoms/nav/desktop/MenuDesktop"),
+);
 
 export default function Home() {
   const age = new Date().getFullYear() - 1998;
+  // const searchParams = useSearchParams();
+  // const search = searchParams.get("page");
 
+  // const tagsList = searchParams.getAll("page");
+  // const allowedTags = ["about", "resume", "portfolio", "contact"];
+  // const hasTag = tagsList.some((tag) => allowedTags.includes(tag));
+
+  // console.log("test-hasTagB", hasTag);
+
+  // const [activeTab, setActiveTab] = useState<IHome | string>(
+  //   search && hasTag ? search : "about",
+  // );
   const [activeTab, setActiveTab] = useState<IHome>("about");
 
   const renderGrid = () => {
@@ -61,26 +81,31 @@ export default function Home() {
               <h2 className="badge-profile">Frontend Developer</h2>
             </div>
             <hr className="my-6 border-t border-gray-300" />
-            <ul className="social-icons">
+            <ul className="flex flex-col gap-1.5">
               {SOCIAL_DATA.map((_s, _key) => (
-                <li className="group" key={_key}>
-                  <a href="#" className="social-icons pr-3.5 sm:pr-6">
-                    {_s.icon}
-                  </a>
-                  <div className="flex w-full flex-col">
-                    <p className="social-title">{_s.title}</p>
-                    <p className="social-sub-title" suppressHydrationWarning>
-                      {_s.title === "Age" ? `${age} year` : _s.subTitle}
-                    </p>
-                  </div>
-                </li>
+                <a
+                  href={_s.title === "Age" ? "#" : _s.value}
+                  target="_blank"
+                  className="group social-group"
+                  key={_key}
+                >
+                  <div className="social-icons">{_s.icon}</div>
+                  <li className="flex items-center">
+                    <div className="flex w-full flex-col">
+                      <p className="social-title">{_s.title}</p>
+                      <p className="social-sub-title" suppressHydrationWarning>
+                        {_s.title === "Age" ? `${age} year` : _s.subTitle}
+                      </p>
+                    </div>
+                  </li>
+                </a>
               ))}
             </ul>
           </div>
-          <MenuMobile
+          {/* <MenuMobile
             activeTab={activeTab}
             setActiveTab={(_tab) => setActiveTab(_tab)}
-          />
+          /> */}
           <div className="bg-black-second w-full rounded-2xl shadow">
             <MenuDesktop
               activeTab={activeTab}
