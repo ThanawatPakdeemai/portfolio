@@ -80,6 +80,10 @@ export const SKILLS_DATA: ISKills[] = [
         src="/logo/logo-nextAuth.webp"
         width={skillIconSize}
         height={skillIconSize}
+        style={{
+          width: "100%",
+          height: "auto",
+        }}
         alt="next-auth"
       />
     ),
