@@ -18,6 +18,7 @@ const PortfolioDetail = () => {
             altText={_p.altText}
             width={_p.width}
             height={_p.height}
+            href={_p.href}
           />
         ))}
       </div>

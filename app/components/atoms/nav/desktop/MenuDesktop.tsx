@@ -1,54 +1,26 @@
-"use client";
-
-// import { usePathname, useRouter, useSearchParams } from "next/navigation";
-// import { useCallback } from "react";
-
+import { TABS_MENU } from "@/app/constants/menu";
 import { IMenu } from "@/interfaces/home.interface";
+import Link from "next/link";
 
-const MenuDesktop = ({ activeTab, setActiveTab }: IMenu) => {
-  // const router = useRouter();
-  // const pathname = usePathname();
-  // const searchParams = useSearchParams();
-
-  // const createQueryString = useCallback(
-  //   (name: string, value: string) => {
-  //     const params = new URLSearchParams(searchParams.toString());
-  //     params.set(name, value);
-  //     return params.toString();
-  //   },
-  //   [searchParams],
-  // );
-
+const MenuDesktop = ({ activeTab }: IMenu) => {
   return (
     <div className="active-tabs hidden sm:block">
       <div className="tab-group">
-        <button
-          className={`tab-btn ${activeTab === "about" ? "text-yellow-primary border-b-2" : "text-white"}`}
-          onClick={() => {
-            // router.push("?" + createQueryString("page", "about"));
-            setActiveTab("about");
-          }}
-        >
-          About
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "resume" ? "text-yellow-primary border-b-2" : "text-white"}`}
-          onClick={() => setActiveTab("resume")}
-        >
-          Resume
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "portfolio" ? "text-yellow-primary border-b-2" : "text-white"}`}
-          onClick={() => setActiveTab("portfolio")}
-        >
-          Portfolio
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "contact" ? "text-yellow-primary border-b-2" : "text-white"}`}
-          onClick={() => setActiveTab("contact")}
-        >
-          Contact
-        </button>
+        {TABS_MENU.map((_tab) => {
+          const isActive = activeTab === _tab.key;
+          return (
+            <Link
+              key={_tab.key}
+              href={`?page=${_tab.key}`}
+              scroll={false}
+              className={`tab-btn ${
+                isActive ? "text-yellow-primary border-b-2" : "text-white"
+              }`}
+            >
+              {_tab.label}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

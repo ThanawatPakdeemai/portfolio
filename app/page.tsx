@@ -1,52 +1,39 @@
-"use client";
-
 import Image from "next/image";
 import { SOCIAL_DATA } from "@/constants/social";
-import { useState } from "react";
 import dynamic from "next/dynamic";
-import { IHome } from "@/interfaces/home.interface";
-// import { useSearchParams } from "next/navigation";
 
 const AboutMeDetail = dynamic(
   () => import("@/features/aboutMe/components/organisms/AboutMeDetail"),
-  { ssr: false },
 );
 const ResumeDetail = dynamic(
   () => import("@/features/resume/components/organisms/ResumeDetail"),
-  { ssr: false },
 );
 const PortfolioDetail = dynamic(
   () => import("@/features/portfolio/components/organisms/PortfolioDetail"),
-  { ssr: false },
 );
 const ContactDetail = dynamic(
   () => import("@/features/contact/components/organisms/ContactDetail"),
-  { ssr: false },
 );
 const MenuMobile = dynamic(
   () => import("@/app/components/atoms/nav/mobile/MenuMobile"),
-  { ssr: false },
 );
 const MenuDesktop = dynamic(
   () => import("@/app/components/atoms/nav/desktop/MenuDesktop"),
-  { ssr: false },
 );
 
-export default function Home() {
+interface IPageProps {
+  searchParams: {
+    page?: string;
+  };
+}
+
+export default async function Home({ searchParams }: IPageProps) {
   const age = new Date().getFullYear() - 1998;
-  // const searchParams = useSearchParams();
-  // const search = searchParams.get("page");
-
-  // const tagsList = searchParams.getAll("page");
-  // const allowedTags = ["about", "resume", "portfolio", "contact"];
-  // const hasTag = tagsList.some((tag) => allowedTags.includes(tag));
-
-  // console.log("test-hasTagB", hasTag);
-
-  // const [activeTab, setActiveTab] = useState<IHome | string>(
-  //   search && hasTag ? search : "about",
-  // );
-  const [activeTab, setActiveTab] = useState<IHome>("about");
+  const { page } = await searchParams;
+  const activeTab =
+    page === "resume" || page === "portfolio" || page === "contact"
+      ? page
+      : "about";
 
   const renderGrid = () => {
     switch (activeTab) {
@@ -105,15 +92,9 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <MenuMobile
-            activeTab={activeTab}
-            setActiveTab={(_tab) => setActiveTab(_tab)}
-          />
+          <MenuMobile activeTab={activeTab} />
           <div className="bg-black-second w-full rounded-2xl shadow">
-            <MenuDesktop
-              activeTab={activeTab}
-              setActiveTab={(_tab) => setActiveTab(_tab)}
-            />
+            <MenuDesktop activeTab={activeTab} />
             {renderGrid()}
           </div>
         </div>

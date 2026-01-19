@@ -1,7 +1,6 @@
 import {
   EDUCATTION_DATA,
   EXPERIENCE_DATA,
-  SKILLS_DATA,
 } from "@/features/resume/constants/resume";
 
 const Timeline = () => {
@@ -18,7 +17,7 @@ const Timeline = () => {
         {EXPERIENCE_DATA.data.map((_elm, _index) => {
           return (
             <li className="dot" key={_index}>
-              <div className="company oxygen-regular">{_elm.company}</div>
+              <div className="company">{_elm.company}</div>
               <div className="time">{_elm.duration}</div>
               <ul className="sub-detail">
                 {_elm.detail.map((_detailItem, _detailIndex) => {
@@ -38,9 +37,7 @@ const Timeline = () => {
         </div>
         <span className="icon-line" />
         <li className="dot">
-          <div className="company oxygen-regular">
-            {EDUCATTION_DATA.university}
-          </div>
+          <div className="company">{EDUCATTION_DATA.university}</div>
           <div className="time">{EDUCATTION_DATA.duration}</div>
           <ul className="sub-detail">
             <li>{EDUCATTION_DATA.degree}</li>

@@ -1,6 +1,7 @@
+"use client";
+
 import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { FORM_SCHEMA_CONTACT } from "@/constants/regex";
 import { TFormValues } from "@/features/contact/interfaces/contact.interface";

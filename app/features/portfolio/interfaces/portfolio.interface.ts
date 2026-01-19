@@ -3,6 +3,7 @@ export interface IPortfolioData {
   altText: string;
   width: number;
   height: number;
+  href: string;
 }
 
 export interface ICardPreviewProps {
