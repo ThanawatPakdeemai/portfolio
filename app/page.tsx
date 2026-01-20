@@ -57,7 +57,7 @@ export default async function Home({ searchParams }: IPageProps) {
           <div className="bg-black-second max-h-max rounded-2xl px-3 py-8 sm:p-10">
             <div className="flex w-full flex-col items-center gap-4 text-center">
               <Image
-                src="/avatar/avatar_3.jpeg"
+                src="/avatar/avatar.webp"
                 width={180}
                 height={180}
                 loading="eager"

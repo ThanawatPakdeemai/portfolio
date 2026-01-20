@@ -94,9 +94,24 @@ export const SKILLS_DATA: ISKills[] = [
     name: "React",
   },
   {
-    icon: <ZustandIcon width={skillIconSize} height={skillIconSize} />,
+    icon: (
+      <Image
+        src="/logo/logo-zustand.webp"
+        width={skillIconSize}
+        height={skillIconSize}
+        style={{
+          width: "100%",
+          height: "auto",
+        }}
+        alt="zustand"
+      />
+    ),
     name: "Zustand",
   },
+  // {
+  //   icon: <ZustandIcon width={skillIconSize} height={skillIconSize} />,
+  //   name: "Zustand",
+  // },
   {
     icon: <ReduxIcon width={skillIconSize} height={skillIconSize} />,
     name: "Redux",
