@@ -57,14 +57,14 @@ export default async function Home({ searchParams }: IPageProps) {
           <div className="bg-black-second max-h-max rounded-2xl px-3 py-8 sm:p-10">
             <div className="flex w-full flex-col items-center gap-4 text-center">
               <Image
-                src="/avatar/avatar_2.webp"
+                src="/avatar/avatar_3.jpeg"
                 width={180}
                 height={180}
                 loading="eager"
                 alt="picture-profile"
                 fetchPriority="high"
                 // className="mb-4 h-32 w-32 shrink-0 rounded-full bg-gray-300"
-                className="card-profile"
+                className="card-profile object-cover"
               />
               <h1 className="text-2xl font-bold text-white">
                 Thanawat Pakdeemai
