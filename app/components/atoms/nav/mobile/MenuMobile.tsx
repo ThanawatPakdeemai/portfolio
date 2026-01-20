@@ -13,6 +13,7 @@ const MenuMobile = ({ activeTab }: IMenu) => {
       <Link
         href="?page=about"
         className={`menu-mobile ${activeTab === "about" ? "bg-yellow-primary" : "bg-linear-black"}`}
+        aria-label="page about"
       >
         <UserIcon
           width={20}
@@ -23,6 +24,7 @@ const MenuMobile = ({ activeTab }: IMenu) => {
       <Link
         href="?page=resume"
         className={`menu-mobile ${activeTab === "resume" ? "bg-yellow-primary" : "bg-linear-black"}`}
+        aria-label="page resume"
       >
         <DocumentIcon
           width={24}
@@ -33,6 +35,7 @@ const MenuMobile = ({ activeTab }: IMenu) => {
       <Link
         href="?page=portfolio"
         className={`menu-mobile ${activeTab === "portfolio" ? "bg-yellow-primary" : "bg-linear-black"}`}
+        aria-label="page portfolio"
       >
         <WorkIcon
           width={22}
@@ -43,6 +46,7 @@ const MenuMobile = ({ activeTab }: IMenu) => {
       <Link
         href="?page=contact"
         className={`menu-mobile ${activeTab === "contact" ? "bg-yellow-primary" : "bg-linear-black"}`}
+        aria-label="page contact"
       >
         <ContactIcon
           width={24}
