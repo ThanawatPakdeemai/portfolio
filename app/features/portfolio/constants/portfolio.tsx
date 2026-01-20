@@ -6,6 +6,6 @@ export const PORTFOLIO_DATA: IPortfolioData[] = [
     altText: "react-resume",
     width: 315,
     height: 220,
-    href: "https://portfolio-ka9r1qai8-thanawatpakdeemais-projects.vercel.app/",
+    href: "https://portfolio-ashen-zeta-16.vercel.app/",
   },
 ];
