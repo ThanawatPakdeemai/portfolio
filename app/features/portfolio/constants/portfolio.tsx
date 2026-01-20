@@ -2,7 +2,7 @@ import { IPortfolioData } from "@/features/portfolio/interfaces/portfolio.interf
 
 export const PORTFOLIO_DATA: IPortfolioData[] = [
   {
-    imageSrc: "/product/portfolio.png",
+    imageSrc: "/product/clickbait-portfolio.webp",
     altText: "react-resume",
     width: 315,
     height: 220,

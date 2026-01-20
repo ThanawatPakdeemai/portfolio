@@ -62,6 +62,7 @@ export default async function Home({ searchParams }: IPageProps) {
                 height={180}
                 loading="eager"
                 alt="picture-profile"
+                fetchPriority="high"
                 // className="mb-4 h-32 w-32 shrink-0 rounded-full bg-gray-300"
                 className="card-profile"
               />
