@@ -27,8 +27,19 @@ interface IPageProps {
   };
 }
 
+function getAge(dateString: string) {
+  var today = new Date();
+  var birthDate = new Date(dateString);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
 export default async function Home({ searchParams }: IPageProps) {
-  const age = new Date().getFullYear() - 1998;
+  const age = getAge("1998/06/23");
   const { page } = await searchParams;
   const activeTab =
     page === "resume" || page === "portfolio" || page === "contact"
