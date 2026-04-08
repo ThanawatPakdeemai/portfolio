@@ -87,6 +87,7 @@
 
 .social-group {
   @apply hover:bg-yellow-primary flex items-center gap-6 hover:rounded-md hover:p-0.75;
+  @apply max-w-[16.625rem];
 }
 
 .social-icons {
