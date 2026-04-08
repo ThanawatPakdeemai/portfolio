@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/product/clickbait-portfolio-2.webp",
-        // url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyX7DvmGRZ3HdswpKRZXdMy4lHG9Te7lqqsLq0fiDbNPzgS3aXzzL3--cwHeBNMU8qnAU9YEEA3fIk7jlRHbwn_qbveqr82GinbkhQPKc&s=10",
         width: 800,
         height: 650,
         alt: "portfolio",
