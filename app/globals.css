@@ -98,7 +98,7 @@
 
 .social-icons-rotate {
   @apply transition-all group-hover:origin-center group-hover:scale-110;
-  @apply group-hover:group-odd:rotate-20 group-hover:group-even:rotate-[-20deg];
+  @apply group-hover:group-odd:rotate-20;
 }
 
 .social-title {
