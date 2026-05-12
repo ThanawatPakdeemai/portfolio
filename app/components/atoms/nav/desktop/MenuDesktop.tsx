@@ -11,7 +11,7 @@ const MenuDesktop = ({ activeTab }: IMenu) => {
           return (
             <Link
               key={_tab.key}
-              href={`?page=${_tab.key}`}
+              href={`/${_tab.key}`}
               scroll={false}
               className={`tab-btn ${
                 isActive ? "text-yellow-primary border-b-2" : "text-white"
