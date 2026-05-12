@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { SOCIAL_DATA } from "@/constants/social";
 import { IHome } from "@/interfaces/home.interface";
 import NotFound from "@/app/not-found";
+import { getAge } from "@/constants/age";
 
 const AboutMeDetail = dynamic(
   () => import("@/features/aboutMe/components/organisms/AboutMeDetail"),
@@ -22,17 +23,6 @@ const MenuMobile = dynamic(
 const MenuDesktop = dynamic(
   () => import("@/app/components/atoms/nav/desktop/MenuDesktop"),
 );
-
-function getAge(dateString: string) {
-  var today = new Date();
-  var birthDate = new Date(dateString);
-  var age = today.getFullYear() - birthDate.getFullYear();
-  var m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-  return age;
-}
 
 const HomePage = async ({ params }: { params?: Promise<{ pages: IHome }> }) => {
   const { pages } = (await params) || { pages: "" as IHome };
@@ -81,7 +71,7 @@ const HomePage = async ({ params }: { params?: Promise<{ pages: IHome }> }) => {
                   <a
                     href={_s.title === "Age" ? "#" : _s.value}
                     target={_s.title === "Age" ? undefined : "_blank"}
-                    rel={_s.title === "Age" ? undefined : "noopener noreferrer"}
+                    // rel={_s.title === "Age" ? undefined : "noopener noreferrer"}
                     className="group social-group flex w-full items-center gap-3"
                   >
                     <div className="social-icons">{_s.icon}</div>

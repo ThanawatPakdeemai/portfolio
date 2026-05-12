@@ -11,8 +11,9 @@ const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab", // เอาไว้ใช้กับ Tailwind
 });
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Thanawat Pakdeemai Portfolio",
+  title: "Thanawat Pakdeemai | Frontend Developer",
+  description:
+    "Frontend Developer specialized in React, Next.js, TypeScript and Tailwind CSS.",
   metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
   openGraph: {
     images: [

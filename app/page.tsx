@@ -1,5 +1,7 @@
 import HomePage from "./[pages]/page";
 
-export default async function Home() {
+const Home = () => {
   return <HomePage />;
-}
+};
+
+export default Home;
