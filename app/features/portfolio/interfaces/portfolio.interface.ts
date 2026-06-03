@@ -12,4 +12,5 @@ export interface ICardPreviewProps {
   altText: string;
   width: number;
   height: number;
+  priority?: boolean;
 }

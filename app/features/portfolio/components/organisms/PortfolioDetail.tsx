@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic";
 import { PORTFOLIO_DATA } from "@/features/portfolio/constants/portfolio";
-
-const CardPreview = dynamic(
-  () => import("@/features/portfolio/components/molecules/CardPreview"),
-);
+import CardPreview from "@/features/portfolio/components/molecules/CardPreview";
 
 const PortfolioDetail = () => {
   return (
@@ -19,6 +15,7 @@ const PortfolioDetail = () => {
             width={_p.width}
             height={_p.height}
             href={_p.href}
+            priority={i === 0}
           />
         ))}
       </div>
