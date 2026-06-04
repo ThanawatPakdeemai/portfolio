@@ -1,11 +1,9 @@
 import { ReactElement } from "react";
-import dynamic from "next/dynamic";
-
-const EmailIcon = dynamic(() => import("@/icons/EmailIcon"));
-const TelephoneIcon = dynamic(() => import("@/icons/TelephoneIcon"));
-const GitHubIcon = dynamic(() => import("@/icons/GitHubIcon"));
-const DateIcon = dynamic(() => import("@/icons/DateIcon"));
-const LinkedinIcon = dynamic(() => import("@/icons/LinkedinIcon"));
+import EmailIcon from "@/icons/EmailIcon";
+import TelephoneIcon from "@/icons/TelephoneIcon";
+import GitHubIcon from "@/icons/GitHubIcon";
+import DateIcon from "@/icons/DateIcon";
+import LinkedinIcon from "@/icons/LinkedinIcon";
 
 interface ISocial {
   title: string;

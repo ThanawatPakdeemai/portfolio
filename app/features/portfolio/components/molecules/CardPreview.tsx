@@ -1,9 +1,7 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import EyeIcon from "@/icons/EyeIcon";
 import { ICardPreviewProps } from "@/features/portfolio/interfaces/portfolio.interface";
-
-const EyeIcon = dynamic(() => import("@/icons/EyeIcon"));
 
 const CardPreview = ({
   href = "https://www.google.com",
@@ -11,6 +9,7 @@ const CardPreview = ({
   altText = "card-preview",
   width = 315,
   height = 220,
+  priority = false,
 }: ICardPreviewProps) => {
   return (
     <Link href={href} target="_blank" rel="noopener noreferrer">
@@ -20,6 +19,10 @@ const CardPreview = ({
           alt={altText}
           width={width}
           height={height}
+          priority={priority}
+          fetchPriority={priority ? "high" : "auto"}
+          loading={priority ? "eager" : "lazy"}
+          placeholder="blur"
           blurDataURL="/other/Image-not-found.png"
         />
         <div className="info cursor-pointer font-semibold">

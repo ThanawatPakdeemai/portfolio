@@ -1,6 +1,4 @@
-import dynamic from "next/dynamic";
-
-const WarningIcon = dynamic(() => import("@/icons/WarningIcon"));
+import WarningIcon from "@/icons/WarningIcon";
 
 interface IMessageState {
   message: string;
