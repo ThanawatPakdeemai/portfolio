@@ -18,7 +18,7 @@ export const LoadingSkeleton = ({
   // <div
   //   className={`${width} ${height} animate-pulse rounded bg-gray-700 ${className}`}
   // />
-  <div className="loader flex h-[80%] items-center justify-center">
+  <div className="loader h-4/5 items-center justify-center">
     <span className="bar"></span>
     <span className="bar"></span>
     <span className="bar"></span>
