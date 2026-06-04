@@ -15,9 +15,14 @@ export const LoadingSkeleton = ({
   width = "w-full",
   className = "",
 }: LoadingSkeletonProps) => (
-  <div
-    className={`${width} ${height} animate-pulse rounded bg-gray-700 ${className}`}
-  />
+  // <div
+  //   className={`${width} ${height} animate-pulse rounded bg-gray-700 ${className}`}
+  // />
+  <div className="loader h-4/5 items-center justify-center">
+    <span className="bar"></span>
+    <span className="bar"></span>
+    <span className="bar"></span>
+  </div>
 );
 
 /**
