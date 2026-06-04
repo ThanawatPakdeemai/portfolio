@@ -1,10 +1,13 @@
 import dynamic from "next/dynamic";
+import { TabLoadingSkeleton } from "@/components/ui/LoadingSkeleton";
 
 const CardDetail = dynamic(
   () => import("@/features/aboutMe/components/molecules/CardDetail"),
+  { loading: () => <TabLoadingSkeleton /> },
 );
 const MySkills = dynamic(
   () => import("@/features/aboutMe/components/molecules/MySkills"),
+  { loading: () => <TabLoadingSkeleton /> },
 );
 
 const AboutMeDetail = () => {

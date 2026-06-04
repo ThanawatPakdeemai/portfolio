@@ -24,7 +24,8 @@
       "@/icons/*": ["./app/components/icons/*"],
       "@/constants/*": ["./app/constants/*"],
       "@/features/*": ["./app/features/*"],
-      "@/interfaces/*": ["./app/interfaces/*"]
+      "@/interfaces/*": ["./app/interfaces/*"],
+      "@/utils/*": ["./app/utils/*"]
     }
   },
   "include": [

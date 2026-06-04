@@ -1,47 +1,16 @@
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { SOCIAL_DATA } from "@/constants/social";
 import { IHome } from "@/interfaces/home.interface";
-import NotFound from "@/app/not-found";
 import { getAge } from "@/constants/age";
-
-const AboutMeDetail = dynamic(
-  () => import("@/features/aboutMe/components/organisms/AboutMeDetail"),
-);
-const ResumeDetail = dynamic(
-  () => import("@/features/resume/components/organisms/ResumeDetail"),
-);
-const PortfolioDetail = dynamic(
-  () => import("@/features/portfolio/components/organisms/PortfolioDetail"),
-);
-const ContactDetail = dynamic(
-  () => import("@/features/contact/components/organisms/ContactDetail"),
-);
-const MenuMobile = dynamic(
-  () => import("@/app/components/atoms/nav/mobile/MenuMobile"),
-);
-const MenuDesktop = dynamic(
-  () => import("@/app/components/atoms/nav/desktop/MenuDesktop"),
-);
+import {
+  MenuMobile,
+  MenuDesktop,
+} from "@/components/registry/componentRegistry";
+import { PageContent } from "@/components/PageContent";
 
 const HomePage = async ({ params }: { params?: Promise<{ pages: IHome }> }) => {
   const { pages } = (await params) || { pages: "" as IHome };
   const age = getAge("1998/06/23");
-
-  const renderGrid = () => {
-    switch (pages as any) {
-      case "":
-        return <AboutMeDetail />;
-      case "resume":
-        return <ResumeDetail />;
-      case "portfolio":
-        return <PortfolioDetail />;
-      case "contact":
-        return <ContactDetail />;
-      default:
-        return <NotFound />;
-    }
-  };
 
   return (
     <main id="main-content" className="p-6 sm:p-16" role="main">
@@ -56,7 +25,6 @@ const HomePage = async ({ params }: { params?: Promise<{ pages: IHome }> }) => {
                 loading="eager"
                 alt="picture-profile"
                 fetchPriority="high"
-                // className="mb-4 h-32 w-32 shrink-0 rounded-full bg-gray-300"
                 className="card-profile object-cover"
               />
               <h1 className="text-2xl font-bold text-white">
@@ -71,7 +39,7 @@ const HomePage = async ({ params }: { params?: Promise<{ pages: IHome }> }) => {
                   <a
                     href={_s.title === "Age" ? "#" : _s.value}
                     target={_s.title === "Age" ? undefined : "_blank"}
-                    // rel={_s.title === "Age" ? undefined : "noopener noreferrer"}
+                    rel={_s.title === "Age" ? undefined : "noopener noreferrer"}
                     className="group social-group flex w-full items-center gap-3"
                   >
                     <div className="social-icons">{_s.icon}</div>
@@ -89,7 +57,7 @@ const HomePage = async ({ params }: { params?: Promise<{ pages: IHome }> }) => {
           <MenuMobile activeTab={pages} />
           <div className="bg-black-second w-full rounded-2xl shadow">
             <MenuDesktop activeTab={pages} />
-            {renderGrid()}
+            <PageContent page={pages} />
           </div>
         </div>
       </div>

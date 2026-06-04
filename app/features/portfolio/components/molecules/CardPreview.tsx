@@ -1,9 +1,7 @@
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import EyeIcon from "@/icons/EyeIcon";
 import { ICardPreviewProps } from "@/features/portfolio/interfaces/portfolio.interface";
-
-const EyeIcon = dynamic(() => import("@/icons/EyeIcon"));
 
 const CardPreview = ({
   href = "https://www.google.com",
