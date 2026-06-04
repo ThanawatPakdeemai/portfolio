@@ -18,7 +18,7 @@ export const LoadingSkeleton = ({
   // <div
   //   className={`${width} ${height} animate-pulse rounded bg-gray-700 ${className}`}
   // />
-  <div className="loader h-4/5 items-center justify-center">
+  <div className="loader flex h-[80%] items-center justify-center">
     <span className="bar"></span>
     <span className="bar"></span>
     <span className="bar"></span>
@@ -29,9 +29,10 @@ export const LoadingSkeleton = ({
  * Tab loading skeleton - used for navigation loading states
  */
 export const TabLoadingSkeleton = () => (
-  <div className="space-y-2">
-    <LoadingSkeleton height="h-8" width="w-32" />
-    <LoadingSkeleton height="h-1" width="w-24" />
+  <div className="h-full space-y-2">
+    {/* <LoadingSkeleton height="h-8" width="w-32" /> */}
+    {/* <LoadingSkeleton height="h-1" width="w-24" /> */}
+    <LoadingSkeleton />
   </div>
 );
 
