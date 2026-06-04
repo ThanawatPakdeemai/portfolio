@@ -29,9 +29,10 @@ export const LoadingSkeleton = ({
  * Tab loading skeleton - used for navigation loading states
  */
 export const TabLoadingSkeleton = () => (
-  <div className="space-y-2">
-    <LoadingSkeleton height="h-8" width="w-32" />
-    <LoadingSkeleton height="h-1" width="w-24" />
+  <div className="h-full space-y-2">
+    {/* <LoadingSkeleton height="h-8" width="w-32" /> */}
+    {/* <LoadingSkeleton height="h-1" width="w-24" /> */}
+    <LoadingSkeleton />
   </div>
 );
 
