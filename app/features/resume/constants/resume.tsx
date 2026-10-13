@@ -15,6 +15,15 @@ export const EXPERIENCE_DATA: IExperience = {
       duration: "JUNE 2022 - PRESENT",
       detail: [
         {
+          task: "Developed CMS websites for various clients, such as King Power Mahanakhon, BDMS, Viriyah Insurance, Naraya, Monsoon Wind Asia and many others.",
+        },
+        {
+          task: "Optimize the website for SEO to achieve a perfect score of 100.",
+        },
+        {
+          task: "Develop email templates for business correspondence.",
+        },
+        {
           task: "Experienced in building agency websites using Concrete CMS (PHP).",
         },
         {
