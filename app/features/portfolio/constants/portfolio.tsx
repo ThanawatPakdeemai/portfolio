@@ -15,4 +15,11 @@ export const PORTFOLIO_DATA: IPortfolioData[] = [
     height: 220,
     href: "https://thai-cat-club.vercel.app/",
   },
+  {
+    imageSrc: "/product/lotto-thumbnail.webp",
+    altText: "lotto-random-easy",
+    width: 315,
+    height: 220,
+    href: "https://lottery-random-easy.vercel.app/",
+  },
 ];
