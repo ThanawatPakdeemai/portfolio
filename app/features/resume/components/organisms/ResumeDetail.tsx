@@ -26,7 +26,7 @@ const ResumeDetail = () => {
           </button>
         </a>
       </div>
-      <span className="bg-yellow-primary my-4 inline-block h-1.5 w-[85px] rounded-xs"></span>
+      <span className="bg-yellow-primary my-4 inline-block h-1.5 w-21.25 rounded-xs"></span>
       <Timeline />
     </div>
   );
