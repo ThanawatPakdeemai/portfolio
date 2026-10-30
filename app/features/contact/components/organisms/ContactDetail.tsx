@@ -129,7 +129,7 @@ const ContactDetail = () => {
           )}
           Send
         </button>
-        <h2 className="font-Roboto_Slab -mt-4 text-3xl text-white">Document</h2>
+        {/* <h2 className="font-Roboto_Slab -mt-4 text-3xl text-white">Document</h2>
         <span className="bg-yellow-primary my-4 inline-block h-1.5 w-21.25 rounded-xs"></span>
         <div className="flex max-w-max items-center gap-4 rounded-[10px] bg-white/7 px-3 py-4">
           <div className="bg-black-02 hover:text-yellow-primary mr-auto flex max-w-max flex-col items-center gap-2.5 rounded-lg p-2.5 font-medium text-white hover:cursor-pointer">
@@ -140,7 +140,7 @@ const ContactDetail = () => {
             <PdfIcon width={75} height={75} />
             <p>CV-Thanawat.pdf</p>
           </div>
-        </div>
+        </div> */}
       </form>
       <Toaster position="top-right" reverseOrder={false} />
     </div>
