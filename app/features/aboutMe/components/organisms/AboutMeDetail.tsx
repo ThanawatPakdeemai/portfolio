@@ -16,7 +16,7 @@ const AboutMeDetail = () => {
       <h2 className="font-Roboto_Slab text-3xl text-white">About Me</h2>
       <span className="bg-yellow-primary my-4 inline-block h-1.5 w-21.25 rounded-xs"></span>
       <p className="text-gray-300">
-        Experienced Frontend Developer with 4 years of specialized experience in
+        Experienced Frontend Developer with 5 years of specialized experience in
         building responsive and user-friendly web applications. Proficient in
         React, Next.js, Tailwind CSS, and other frontend technologies. Known for
         being a diligent and resilient professional who thrives in high-pressure
