@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://img1.pic.in.th/images/clickbait-portfolio-2.webp",
+        url: "https://img1.pic.in.th/images/clickbait-portfolio-2.avif",
         width: 800,
         height: 650,
         alt: "portfolio",
