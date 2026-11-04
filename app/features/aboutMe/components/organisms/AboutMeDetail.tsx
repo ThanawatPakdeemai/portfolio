@@ -14,7 +14,7 @@ const AboutMeDetail = () => {
   return (
     <div className="p-6">
       <h2 className="font-Roboto_Slab text-3xl text-white">About Me</h2>
-      <span className="bg-yellow-primary my-4 inline-block h-1.5 w-[85px] rounded-xs"></span>
+      <span className="bg-yellow-primary my-4 inline-block h-1.5 w-21.25 rounded-xs"></span>
       <p className="text-gray-300">
         Experienced Frontend Developer with 4 years of specialized experience in
         building responsive and user-friendly web applications. Proficient in
