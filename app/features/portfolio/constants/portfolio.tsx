@@ -29,4 +29,11 @@ export const PORTFOLIO_DATA: IPortfolioData[] = [
     height: 220,
     href: "https://neon-party-dun.vercel.app/",
   },
+  {
+    imageSrc: "/product/clickbait-yaekbin.avif",
+    altText: "yaek-bin",
+    width: 315,
+    height: 220,
+    href: "https://yaek-bin.vercel.app/",
+  },
 ];
